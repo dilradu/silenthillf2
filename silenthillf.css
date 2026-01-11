@@ -1,0 +1,172 @@
+/* === Body === */
+body {
+  font-family: Arial, sans-serif; /* readable font for the website */
+  background-color: #000000;      /* black background for Silent Hill vibe */
+  color: #e6e6e6;                 /* light gray text for readability */
+  line-height: 24px;              /* space between lines so text isn't squished */
+  margin: 0;                       /* remove default browser margin */
+  padding: 0;                      /* remove default browser padding */
+}
+
+/* === Header === */
+header {
+  background-color: #100f0f;      /* dark header to match theme */
+  border-bottom: 1px solid #262b28; /* subtle line under header to separate it */
+}
+
+.header-inner {
+  max-width: 1200px;              /* container doesn’t stretch too wide on big screens */
+  margin: 0 auto;                 /* centers the header horizontally */
+  padding: 20px;                  /* space inside the header */
+  text-align: center;             /* center logo and nav */
+}
+
+/* Logo */
+.logo {
+  width: 100%;                     /* makes logo responsive */
+  max-width: 1000px;                /* logo won't get too big on large screens */
+  height: auto;                     /* keeps original proportions */
+  margin-bottom: 20px;             /* space below the logo */
+}
+
+/* === Navigation Menu === */
+nav ul {
+  list-style: none;                /* remove default bullets */
+  padding: 0;                      /* remove default padding */
+}
+
+nav ul li {
+  display: inline-block;           /* show menu items in a row */
+  margin-right: 30px;              /* space between menu items */
+}
+
+nav ul li a {
+  text-decoration: none;           /* remove underline */
+  color: #811e1e;                  /* dark red for Silent Hill vibe */
+  font-size: 16px;                 /* readable size for menu links */
+}
+
+nav ul li a:hover {
+  color: #8f1d1d;                  /* slightly lighter red on hover */
+}
+
+/* === Hero Section === */
+.hero {
+  width: 70%;                       /* 70% of the page width */
+  margin: 10px auto;                /* centers hero horizontally */
+  position: relative;               /* needed for caption positioning */
+  border: 1px solid #262b28;       /* subtle border for separation */
+}
+
+.hero img {
+  width: 100%;                      /* hero image fills the container */
+  display: block;                   /* removes small space under image */
+  opacity: 0.85;                    /* slight transparency for effect */
+}
+
+.hero-caption {
+  position: absolute;               /* places caption on top of image */
+  bottom: 10px;                     /* distance from bottom of hero image */
+  left: 10px;                       /* distance from left side */
+  background: rgba(143, 29, 29, 0.6); /* semi-transparent background */
+  padding: 5px 10px;                /* spacing inside the caption box */
+  border: 1px solid #262b28;        /* subtle border around caption */
+  font-size: 12px;                  /* small caption font */
+}
+
+/* === Two-column row under hero === */
+.content-row {
+  display: flex;                     /* makes boxes sit side by side */
+  max-width: 1200px;                 /* container width limit */
+  margin: 0 auto 20px auto;          /* centers row and adds space below */
+  padding: 0 20px;                   /* padding left and right */
+  gap: 20px;                          /* space between columns */
+}
+
+/* === Welcome box (left column) === */
+.welcome-box {
+  background-color: #100f0f;         /* dark background to match theme */
+  padding: 20px;                      /* inner spacing */
+  border: 1px solid #262b28;         /* separates box from background */
+  flex: 3;                            /* takes more space than the quick links */
+}
+
+.article-img {
+  float: right;                       /* image floats to the right of the text */
+  width: 260px;                        /* image width */
+  margin-left: 10px;                   /* space between text and image */
+  margin-bottom: 10px;                 /* spacing below image */
+}
+
+.welcome-box h2 {
+  font-family: 'Times New Roman', serif; /* classic font for heading */
+  font-size: 24px;                        /* readable heading size */
+  margin-bottom: 10px;                     /* spacing below heading */
+}
+
+.welcome-box p {
+  font-size: 14px;                         /* readable paragraph text */
+  color: #a0a0a0;                          /* gray text for readability */
+  margin-bottom: 10px;                      /* spacing below paragraph */
+}
+
+/* === Quick Links box (right column) === */
+.quick-links-box {
+  background-color: #100f0f;
+  padding: 20px;
+  border: 1px solid #262b28;
+  width: 250px;                             /* fixed width */
+  flex-shrink: 0;                           /* prevents shrinking on smaller screens */
+}
+
+.quick-links-box h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #8f1d1d;                           /* dark red heading */
+}
+
+.quick-links-box ul {
+  list-style: none;                         /* remove bullets */
+  padding-left: 0;                           /* remove default padding */
+}
+
+.quick-links-box li {
+  margin-bottom: 8px;                        /* spacing between list items */
+}
+
+.quick-links-box a {
+  color: #e6e6e6;
+  text-decoration: none;                     /* remove underline from links */
+  font-size: 14px;                           /* readable link size */
+}
+
+.quick-links-box a:hover {
+  color: #8f1d1d;                           /* lighter red on hover */
+}
+
+/* === Footer === */
+footer {
+  margin-top: 20px;                          /* space above footer */
+  padding: 20px;                              /* space inside footer */
+  text-align: center;                         /* center text */
+  font-size: 12px;                            /* small text size */
+  color: #a0a0a0;                             /* gray text for readability */
+  border-top: 1px solid #262b28;            /* subtle line separating footer */
+}
+
+/* === Responsive Design === */
+@media (max-width: 900px) {
+  .content-row {
+    flex-direction: column;                  /* stack columns on smaller screens */
+  }
+
+  .article-img {
+    float: none;                             /* image no longer floats */
+    width: 80%;                               /* scales image down */
+    margin: 0 0 10px 0;                      /* spacing below image */
+  }
+
+  .quick-links-box {
+    width: 100%;                             /* full width on mobile */
+  }
+}

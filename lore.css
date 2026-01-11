@@ -1,0 +1,81 @@
+/* Body and general setup */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Header */
+h1 {
+    color: #7b1212;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7b1212;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Lore rows */
+.lore-row {
+    display: flex;             /* row layout */
+    align-items: center;       /* vertical alignment */
+    justify-content: space-between;
+    padding: 50px 60px;
+    gap: 40px;
+}
+
+/* Text styling */
+.lore-text {
+    width: 600px;             /* fixed width for readability */
+    font-size: 16px;
+    line-height: 26px;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-family: 'Creepster', Arial, sans-serif;   /* special Silent Hill style font */
+}
+
+/* Image styling */
+.lore-image img {
+    width: 650px;             /* fixed width */
+    height: auto;             /* keep aspect ratio */
+}
+
+/* Responsive design */
+@media screen and (max-width: 1000px) {
+    .lore-row {
+        flex-direction: column; /* stack on mobile */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .lore-image img {
+        width: 100%;           /* scale down on mobile */
+        max-width: 400px;
+    }
+
+    .lore-text {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* Reverse row: flips the order of elements */
+.lore-row.reverse {
+    flex-direction: row-reverse; /* text left, image right */
+}

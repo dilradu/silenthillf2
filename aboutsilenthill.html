@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Silent Hill F</title>
+    <link rel="stylesheet" href="about-shf.css">
+</head>
+<body>
+    <h1>About Silent Hill F</h1>
+
+    <nav>
+       <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fanwebsiteshfchar.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="monsters.html">Monsters</a></li>
+      </ul>
+    </nav>
+
+    <div class="about-card">
+        <img src="images/aboutsilenthilla.webp" alt="Silent Hill F" class="about-image">
+        <div class="about-text">
+            <p>
+                <strong>Silent Hill F</strong> is a fan-made continuation of the classic Silent Hill universe, set in the 1960s in the rural town of Ebisugaoka. 
+                The story follows a group of high school students who uncover dark secrets and face supernatural horrors that threaten their town. 
+                Players navigate eerie environments, encounter nightmarish creatures, and explore the psychological aspects of fear and suspense. 
+                The game emphasizes atmosphere, tension, and storytelling, staying true to the unsettling tone that the Silent Hill series is known for.
+            </p>
+        </div>
+    </div>
+
+    <script>
+    // Scroll fade-in effect
+    const aboutCard = document.querySelector('.about-card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    observer.observe(aboutCard);
+    </script>
+</body>
+</html>

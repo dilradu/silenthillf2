@@ -1,0 +1,126 @@
+/* === Body and basic styles === */
+body {
+    background-color: black;           /* black background for Silent Hill theme */
+    font-family: Arial, sans-serif;    /* readable font for body text */
+    margin: 0;                          /* remove default browser margin */
+    padding: 0;                         /* remove default browser padding */
+}
+
+/* Main page title */
+h1 {
+    color: rgb(123, 18, 18);           /* deep red color for headings */
+    text-align: center;                /* center the heading */
+    font-size: 50px;                   /* large size for main title */
+    margin-top: 30px;                  /* spacing from top */
+}
+
+/* === Card layout (character boxes) === */
+.shf-card {
+    display: flex;                     /* flex layout to place image and text side by side */
+    align-items: center;               /* vertical alignment in center */
+    gap: 40px;                         /* space between image and text */
+    width: 100vw;                      /* full width of viewport */
+    margin: 40px 0;                    /* spacing above and below each card */
+    padding: 20px 60px;                /* internal spacing */
+    background: #050505;               /* dark background for card */
+    border-left: 3px solid #7b1212;   /* red line on the left for style */
+    box-sizing: border-box;            /* include padding in width calculation */
+    opacity: 0;                        /* hidden at first for scroll animation */
+    transform: translateY(40px);       /* starts slightly below */
+    transition: 0.8s ease;             /* smooth fade-in animation */
+}
+
+/* === When card becomes visible on scroll === */
+.shf-card.show {
+    opacity: 1;                        /* fully visible */
+    transform: translateY(0);          /* move to correct position */
+}
+
+/* === Images inside character cards === */
+.shf-card img {
+    width: 220px;                      /* default image size */
+    flex-shrink: 0;                    /* prevent shrinking if container is small */
+}
+
+/* Make main characters slightly bigger */
+img#shimizu-img,
+img#Kotoyuki-img {
+    width: 400px;                      /* bigger size for main characters */
+}
+
+/* Zig-zag layout for alternating cards */
+.shf-card:nth-child(even) {
+    flex-direction: row-reverse;       /* reverse row for even cards */
+}
+
+/* === Text container next to image === */
+.shf-text {
+    display: flex;                     /* flex for vertical alignment */
+    flex-direction: column;            /* text stacked vertically */
+    justify-content: center;           /* center vertically */
+    max-width: 600px;                  /* limits text width for readability */
+}
+
+/* === Character names === */
+#shimizuh, #Iwai, #Rinko, #Igarashi, #Tsuneki {
+    color: #7b1212;                     /* deep red for character names */
+    font-size: 28px;                     /* readable but not too big */
+    letter-spacing: 1px;                 /* small space between letters */
+    margin: 0 0 10px 0;                  /* spacing below the name */
+    font-family: 'Creepster', Arial, sans-serif; /* special Silent Hill style font */
+}
+
+/* === Character descriptions === */
+#shimizu, #shui, #rinko, #sakuko-text, #kotoyuki-text {
+    color: #bdbdbd;                      /* gray text for readability */
+    font-size: 16px;                      /* medium size text */
+    line-height: 1.6;                     /* space between lines for readability */
+    max-width: 600px;                     /* matches container width */
+}
+
+/* === Navigation bar === */
+nav ul {
+    list-style: none;                     /* remove default bullets */
+    padding: 20px;                        /* spacing around nav */
+    margin: 20px;                         /* spacing from other content */
+    display: flex;                        /* horizontal menu items */
+    gap: 90px;                             /* space between menu items */
+    justify-content: center;               /* center menu items */
+}
+
+nav ul li a {
+    text-decoration: none;                 /* remove underline */
+    color: #7b1212;                        /* red color */
+    font-size: 20px;                        /* readable size */
+    font-weight: bold;                      /* stand out in nav */
+}
+
+/* === Kanji characters floating vertically opposite the character === */
+.shf-card {
+    position: relative;                     /* allows absolute positioning of kanji */
+}
+
+.kanji {
+    position: absolute;                      /* position relative to card */
+    color: #951e1e;                          /* deep red for style */
+    font-family: 'Creepster', Arial, sans-serif; /* same font as names */
+    font-size: 100px;                        /* very large for visual impact */
+    line-height: 1;                           /* tight vertical stacking */
+    writing-mode: vertical-rl;               /* vertical stacking top to bottom */
+    text-orientation: upright;               /* each kanji stays upright */
+    top: 50%;                                 /* center vertically */
+    transform: translateY(-50%);             /* correct vertical center */
+    pointer-events: none;                     /* won’t block clicks */
+    white-space: nowrap;                      /* no line breaks */
+    padding-left: 200px;                      /* spacing from text */
+    padding-right: 200px;                     /* spacing from text */
+}
+
+/* Position Kanji opposite the image depending on row */
+.shf-card:nth-child(odd) .kanji {
+    right: 30px;  /* odd cards → Kanji on right */
+}
+
+.shf-card:nth-child(even) .kanji {
+    left: 30px;   /* even cards → Kanji on left */
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lore</title>
+    <link rel="stylesheet" href="lore.css">
+</head>
+<body>
+    <header>
+        <h1>Lore</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fanwebsiteshfchar.html">Characters</a></li>
+                <li><a href="lore.html">Lore</a></li>
+                <li><a href="monsters.html">Monsters</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- First row: TEXT LEFT, IMAGE RIGHT -->
+    <div class="lore-row">
+        <div class="lore-text">
+            Silent Hill f takes place in 1960s rural Japan, in a quiet town called Ebisugaoka. This entry shifts the horror to a Japanese countryside filled with shrines, forests, narrow streets, and old traditions.
+            At first, Ebisugaoka seems peaceful but strange things begin to happen. A thick fog slowly rolls into the town, cutting it off from the outside world. People start disappearing, flowers grow in unnatural ways, and terrifying creatures begin to roam the streets. The town itself feels alive, as if it is watching those who remain.
+        </div>
+        <div class="lore-image">
+            <img src="images/loregif1.webp" alt="Lore Image">
+        </div>
+    </div>
+
+    <!-- Second row: IMAGE LEFT, TEXT RIGHT -->
+    <div class="lore-row">
+        <div class="lore-image">
+            <img src="images/loregif3.webp" alt="Lore Image">
+        </div>
+        <div class="lore-text">
+            The story follows Shimizu Hinako, a quiet high school girl who becomes trapped in the fog. As she searches for her friends and family, she is forced to confront disturbing monsters that appear to be connected to Japanese folklore, guilt, trauma, and forgotten traditions. Many of these creatures seem to represent emotional pain, social pressure, and fear rather than just being physical threats.
+        </div>
+    </div>
+
+<!-- Third row: TEXT LEFT, IMAGE RIGHT -->
+<div class="lore-row">
+    <div class="lore-text">
+        A major theme of Silent Hill f is beauty hiding cruelty. Flowers, festivals, dolls, and traditional symbols, things normally seen as gentle or innocent — are twisted into horrifying forms. The town reflects the emotional suffering of its people, turning personal struggles into physical nightmares.
+    </div>
+    <div class="lore-image">
+        <img src="images/loregif2.webp" alt="Lore Image">
+    </div>
+</div>
+    <!-- Logo and Explanation -->
+<div class="lore-row reverse">
+    <div class="lore-text">
+        The lowercase 'f' in the title is often interpreted as symbolizing fertility (flower), but also potentially witchcraft, a cross, or even a representation of the "Fox Mask" figure, depending on interpretation.
+    </div>
+    <div class="lore-image">
+        <img src="images/silent hill f logo gif.gif" alt="Silent Hill F Logo">
+    </div>
+</div>
+<script>
+const rows = document.querySelectorAll(".lore-row");
+
+const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+
+    rows.forEach(row => {
+        const rowTop = row.getBoundingClientRect().top;
+
+        if (rowTop < windowHeight - 100) {
+            row.classList.add("show");
+        }
+    });
+};
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+</script>
+
+</body>
+</html>

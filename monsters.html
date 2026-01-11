@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monsters</title>
+    <link rel="stylesheet" href="monstersh.css">
+</head>
+<body>
+    <h1>Monsters</h1>
+
+    <nav>
+       <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fanwebsiteshfchar.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="monsters.html">Monsters</a></li>
+      </ul>
+    </nav>
+
+    <!-- Monster 1 -->
+    <div class="monster-card">
+        <img src="images/kk gif.gif" alt="Kashimashi full body rotating">
+        <div class="monster-text">
+            <p class="monster-name">Kashimashi 姦</p>
+            <p class="monster-description">
+                A tall, slender humanoid creature with elongated limbs and a featureless face.
+                Its skin appears to be made of a smooth, reflective material that glistens in the light.
+                The creature moves with an eerie grace, its movements fluid and almost hypnotic.
+            </p>
+        </div>
+    </div>
+
+    <!-- Monster 2 -->
+    <div class="monster-card">
+        <img src="images/ayakakashi.webp" alt="Ayakakashi">
+        <div class="monster-text">
+            <p class="monster-name">Ayakakashi 妖</p>
+            <p class="monster-description">
+                Ayakakashi is a dark, malevolent spirit that haunts the forests around Ebisugaoka. Often appearing as a twisted fox with glowing eyes, it moves silently through the mist. Those who encounter it feel a chilling presence and sometimes see fleeting illusions, making it one of the most feared entities in Silent Hill F.
+            </p>
+        </div>
+    </div>
+
+    <!-- Monster 3 -->
+    <div class="monster-card">
+        <img src="images/babyheads.webp" alt="Oi-Omoi">
+        <div class="monster-text">
+            <p class="monster-name">Oi-Omoi 追思</p>
+            <p class="monster-description">
+               Oi‑omoi is a grotesque entity composed of countless hina doll heads and bodies, fused into one nightmarish form. Its many faces seem to watch from every angle, giving the impression that it is aware of every movement around it. Despite its childlike origins, its motions are unsettling — a combination of slow, deliberate steps and sudden, twitching jerks. Legends in Silent Hill f say that encountering Oi‑omoi brings a deep sense of dread, as if the creature carries the weight of forgotten memories and lost innocence.
+            </p>
+        </div>
+    </div>
+
+    <!-- Monster 4 -->
+    <div class="monster-card">
+        <img src="images/arearabe.webp" alt="Ara-Abare">
+        <div class="monster-text">
+            <p class="monster-name">Ara-Abare 荒暴れ</p>
+            <p class="monster-description">
+              A towering, hulking brute wrapped in jagged, almost organic armor. Its movements are sudden and violent, each strike fueled by unrelenting rage. Those who encounter it feel the raw force of its fury, as if the creature itself embodies chaos and destruction.
+            </p>
+        </div>
+    </div>
+
+    <script>
+    const monsterCards = document.querySelectorAll('.monster-card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    monsterCards.forEach(card => observer.observe(card));
+    </script>
+</body>
+</html>

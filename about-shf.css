@@ -1,0 +1,87 @@
+/* Body and basic styles */
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #bdbdbd;
+}
+
+h1 {
+    color: rgb(123, 18, 18);
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+
+/* Navigation bar */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #7b1212;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* About card layout */
+.about-card {
+    display: flex;
+    align-items: center; /* vertically center image + text */
+    gap: 40px;           
+    padding: 40px 60px;
+    margin: 40px auto;
+    max-width: 1000px;
+    background-color: #050505;
+    border-left: 3px solid #7b1212;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+    flex-wrap: wrap; /* responsive on smaller screens */
+}
+
+/* Image next to text */
+.about-image {
+    width: 900px;
+    flex-shrink: 0;
+}
+
+/* Text inside the card */
+.about-text {
+    max-width: 800px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #bdbdbd;
+}
+
+/* Scroll effect */
+.about-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 900px) {
+    .about-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-image {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

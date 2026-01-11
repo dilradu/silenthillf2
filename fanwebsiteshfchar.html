@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters</title>
+    <link rel="stylesheet" href="charshf.css">
+</head>
+<body>
+    <h1>Characters</h1>
+
+    <nav>
+       <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fanwebsiteshfchar.html">Characters</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="monsters.html">Monsters</a></li>
+      </ul>
+    </nav>
+
+    <div class="shf-card">
+        <img id="shimizu-img" src="images/sh.png" alt="Shimizu Hinako">
+        <div class="shf-text">
+            <p id="shimizuh">Shimizu Hinako</p>
+            <p id="shimizu">
+                Hinako is the game’s protagonist: a shy, determined high school student from rural Ebisugaoka in the 1960s. Once cheerful as a child, she’s grown quiet and restrained under social pressure and family expectations. When fog and monstrous horrors overrun her town, she must fight to survive and discover her own strength.
+            </p>
+        </div>
+        <span class="kanji">深水雛子</span>
+    </div>
+
+    <div class="shf-card">
+        <img id="shu" src="images/SHf_-_Shu_model.png" alt="Shu Iwai">
+        <div class="shf-text">
+            <p id="Iwai">Shu Iwai</p>
+            <p id="shui">
+                Shu is Hinako’s childhood friend and ally. Raised in a family of physicians, he is knowledgeable about medicine and often serves as a calming, reliable presence. Though forward-thinking for his age, he shares deep bonds with Hinako and supports her through the terrors that engulf their town.
+            </p>
+        </div>
+        <span class="kanji">岩井修</span>
+    </div>
+
+    <div class="shf-card">
+        <img id="Nishida" src="images/SHf_-_Rinko_model.webp" alt="Nishida Rinko">
+        <div class="shf-text">
+            <p id="Rinko">Nishida Rinko</p>
+            <p id="rinko">
+                Rinko is another close friend of Hinako and Shu. She is known for being rule-abiding and a bit of a gossip, often creating tension in the group with her crush on Shu. Despite her chatter, she proves loyal and shows courage when faced with the horrors in Ebisugaoka.
+            </p>
+        </div>
+        <span class="kanji">西田凜子</span>
+    </div>
+
+    <div class="shf-card">
+        <img id="sakuko" src="images/SHf_-_Sakuko_model.webp" alt="Sakuko Igarashi">
+        <div class="shf-text">
+            <p id="Igarashi">Sakuko Igarashi</p>
+            <p id="sakuko-text">
+                Sakuko is a gentle, dreamy friend whose family manages the local Shinto shrine. She offers spiritual insight and calm to the group, but beneath her soft demeanor lies a quiet courage that emerges when the town is overtaken by strange, supernatural forces.
+            </p>
+        </div>
+        <span class="kanji">五十嵐咲子</span>
+    </div>
+
+    <div class="shf-card">
+        <img id="Kotoyuki-img" src="images/SHf_-_Fox_Mask_model.webp" alt="Kotoyuki Tsuneki">
+        <div class="shf-text">
+            <p id="Tsuneki">Kotoyuki Tsuneki</p>
+            <p id="kotoyuki-text">
+                Kotoyuki, also known as the Fox Mask, is a mysterious figure connected to Hinako’s past and the supernatural events in Ebisugaoka. His intentions are enigmatic, often walking the line between protector and ominous presence, reflecting the eerie folklore of fox spirits.
+            </p>
+        </div>
+        <span class="kanji">常喜寿幸</span>
+    </div>
+
+<script>
+const cards = document.querySelectorAll('.shf-card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+cards.forEach(card => observer.observe(card));
+</script>
+
+</body>
+</html>

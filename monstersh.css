@@ -1,0 +1,91 @@
+/* ================= Body and Fonts ================= */
+body {
+    background-color: black;          /* dark background to fit Silent Hill theme */
+    font-family: Arial, sans-serif;   /* simple, readable font for all text */
+    margin: 0;                        /* remove default browser margin */
+    padding: 0;                       /* remove default browser padding */
+}
+
+h1 {
+    color: rgb(123, 18, 18);          /* deep red headline for horror vibe */
+    text-align: center;               /* center the main heading */
+    font-size: 50px;                  /* big headline */
+    margin-top: 30px;                 /* spacing from the top of the page */
+}
+
+/* ================= Navigation ================= */
+nav ul {
+    list-style: none;                 /* remove default bullet points */
+    padding: 20px;                    /* spacing inside the nav */
+    margin: 20px;                     /* spacing outside nav */
+    display: flex;                    /* horizontal layout for menu items */
+    gap: 90px;                        /* space between each menu item */
+    justify-content: center;          /* center menu horizontally */
+}
+
+nav ul li a {
+    text-decoration: none;            /* remove underline from links */
+    color: #7b1212;                   /* deep red links matching theme */
+    font-size: 20px;                  /* readable size */
+    font-weight: bold;                /* make links stand out */
+}
+
+/* ================= Images ================= */
+img {
+    display: block;                   /* remove extra spacing below images */
+    margin: 0;                        /* no default margin */
+    max-width: 100%;                  /* responsive images scale down on small screens */
+    border-radius: 10px;              /* slightly rounded corners for style */
+}
+
+/* ================= Monster Cards ================= */
+.monster-card {
+    display: flex;                     /* side-by-side layout: image + text */
+    align-items: center;               /* vertically align text with image */
+    gap: 40px;                         /* space between image and text */
+    margin: 60px auto;                  /* vertical spacing, center horizontally */
+    width: 90%;                         /* nearly full width */
+    max-width: 1200px;                  /* max width for large screens */
+
+    /* Scroll fade-in effect */
+    opacity: 0;                         /* hidden initially */
+    transform: translateY(40px);        /* start slightly below */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* animate fade and position */
+}
+
+/* Alternate layout for even-numbered cards (zig-zag) */
+.monster-card:nth-child(even) {
+    flex-direction: row-reverse;       /* reverse order: image right, text left */
+}
+
+.monster-card:nth-child(even) .monster-text {
+    text-align: right;                 /* right-align text for zig-zag effect */
+}
+
+/* Make card visible when scrolled into view */
+.monster-card.show {
+    opacity: 1;                        /* fully visible */
+    transform: translateY(0);          /* move to final position */
+}
+
+/* ================= Monster Text ================= */
+.monster-text {
+    display: flex;                      /* flex layout for text content */
+    flex-direction: column;             /* stack name and description vertically */
+    justify-content: center;            /* vertical alignment inside card */
+}
+
+/* Monster name */
+.monster-name {
+    color: #7b1212;                     /* deep red for horror theme */
+    font-size: 22px;                     /* slightly bigger than normal text */
+    margin: 0 0 10px 0;                  /* space below name */
+    font-family: 'Creepster', Arial, sans-serif; /* spooky Silent Hill font */
+}
+
+/* Monster description */
+.monster-description {
+    color: #ccc;                        /* light grey text for readability */
+    font-size: 16px;                     /* comfortable reading size */
+    max-width: 700px;                    /* avoid overly wide text lines */
+}
